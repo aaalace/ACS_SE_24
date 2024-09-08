@@ -1,5 +1,6 @@
 # ДЗ 1
-Видео для доп баллов в той же папке, что и этот файл
+Видео для доп баллов:
+https://drive.google.com/file/d/1LmGkFjH8Ua4e9GEwCLWrhWoG2xj-Q_I5/view?usp=sharing
 
 ## №1 (add-int01.s)
 ### Код
