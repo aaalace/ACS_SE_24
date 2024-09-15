@@ -1,0 +1,46 @@
+# ДЗ 2
+Тазеев Алмаз Дамирович БПИ235
+
+## [fibonacci.asm](fibonacci.asm)
+```assembly
+main:
+	mv	t0,	zero		# Псевдокоманда
+	li 	t1,	1			# Псевдокоманда
+	
+	li	a7,	5			# Псевдокоманда
+	ecall				
+	mv	t3,	a0			# Псевдокоманда
+fib:
+	beqz t3, finish		# Псевдокоманда
+	add  t2, t1, t0		# R: | opcode | rd | funct3 | rs1 | rs2 | funct7 |
+	mv	 t0, t1			# Псевдокоманда
+	mv	 t1, t2			# Псевдокоманда
+	addi t3, t3, -1		# I: | opcode | rd | funct3 | rs1 | imm[11:0] |
+	j	 fi				# Псевдокоманда
+finish:
+	li	a7,	1			# Псевдокоманда
+	mv	a0,	t0			# Псевдокоманда
+	ecall				
+```
+
+![](assets/fib20.png)
+
+## [dump.txt](dump.txt)
+```
+Address     Code        Basic                        Line Source
+
+0x00400000  0x000002b3  add x5,x0,x0                 2    	mv	t0,	zero		# R
+0x00400004  0x00100313  addi x6,x0,1                 3    	li 	t1,	1			# I
+0x00400008  0x00500893  addi x17,x0,5                5    	li	a7,	5			# I
+0x0040000c  0x00000073  ecall                        6    	ecall				
+0x00400010  0x00a00e33  add x28,x0,x10               7    	mv	t3,	a0			# R
+0x00400014  0x000e0c63  beq x28,x0,0x00000018        9    	beqz t3, finish		# B
+0x00400018  0x005303b3  add x7,x6,x5                 10   	add  t2, t1, t0		# R
+0x0040001c  0x006002b3  add x5,x0,x6                 11   	mv	 t0, t1			# R
+0x00400020  0x00700333  add x6,x0,x7                 12   	mv	 t1, t2			# R
+0x00400024  0xfffe0e13  addi x28,x28,0xffffffff      13   	addi t3, t3, -1		# I
+0x00400028  0xfedff06f  jal x0,0xffffffec            14   	j	 fib			# J
+0x0040002c  0x00100893  addi x17,x0,1                16   	li	a7,	1			# I
+0x00400030  0x00500533  add x10,x0,x5                17   	mv	a0,	t0			# R
+0x00400034  0x00000073  ecall                        18   	ecall				
+```
