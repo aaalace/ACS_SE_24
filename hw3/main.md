@@ -1,10 +1,14 @@
 # ДЗ 2
 Тазеев Алмаз Дамирович БПИ235
 
-## [division.asm](division.asm)
+## Решение [division.asm](division.asm)
 
-// screenshots
+## Решение на C++ [main.cpp](./cppSolution/main.cpp)
 
-## [Solution on C++](./cppSolution/main.cpp)
-
-// ссылка на .asm файл с тестами
+## Скриншоты с результатами:
+![](assets/1.png)
+![](assets/2.png)
+![](assets/3.png)
+![](assets/4.png)
+![](assets/5.png)
+![](assets/6.png)
